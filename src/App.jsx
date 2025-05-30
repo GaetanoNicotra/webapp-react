@@ -1,11 +1,18 @@
-import { useState } from 'react'
+import DefaultLayouts from '../layouts/DefaultLayouts'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from '../pages/HomePage'
 
 function App() {
-
-
   return (
     <>
-      <h1>hello world</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayouts />}>
+            <Route index element={<HomePage />}></Route>
+            <Route path="/films/:id" element={<h1>DETTAGLIO FILM</h1>}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
