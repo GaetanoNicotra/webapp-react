@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import FilmCard from "../components/FilmCard";
 
 const initialFilms = [
     {
@@ -139,7 +140,7 @@ const initialFilms = [
     }
 ];
 
-const HomePage = () => {
+const HomePage = (film) => {
     // definisco la variabile di stato
     const [films, setFilms] = useState(initialFilms)
 
@@ -148,22 +149,8 @@ const HomePage = () => {
             <h1 className='text-secondary'>BOOLFILMS</h1>
             <div className="row mt-5 gy-4">
                 {films.map((film) => {
-                    // destrutturazione 
-                    const { id, title, author, excerpt, cover } = film;
                     // map
-                    return <div className="col-12 col-md-6 col-lg-4">
-                        <div className="card">
-                            <div className="card-img-top">
-                                <img src={cover} alt="film" className='img-fluid' />
-                            </div>
-                            <div className="card-body">
-                                <h3 className='text-primary'>{title}</h3>
-                                <h5><em>{author}</em></h5>
-                                <p>{excerpt}</p>
-                                <Link className="btn btn-primary" to={`/films/${id}`}>Esplora</Link>
-                            </div>
-                        </div>
-                    </div>
+                    return <FilmCard film={film} key={film.id} />
                 })}
             </div>
         </>
