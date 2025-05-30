@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 
 const initialFilms = [
     {
@@ -139,25 +139,32 @@ const initialFilms = [
     }
 ];
 
-
 const HomePage = () => {
+    // definisco la variabile di stato
+    const [films, setFilms] = useState(initialFilms)
+
     return (
         <>
             <h1 className='text-secondary'>BOOLFILMS</h1>
             <div className="row mt-5 gy-4">
-                <div className="col-12 col-md-6 col-lg-4">
-                    <div className="card">
-                        <div className="card-img-top">
-                            <img src="https://picsum.photos/500/300" alt="film" className='img-fluid' />
-                        </div>
-                        <div className="card-body">
-                            <h3 className='text-primary'>Titolo</h3>
-                            <h5><em>Produttori</em></h5>
-                            <p>Trama</p>
-                            <Link className="btn btn-primary" to="/films/1">Esplora</Link>
+                {films.map((film) => {
+                    // destrutturazione 
+                    const { id, title, author, excerpt, cover } = film;
+                    // map
+                    return <div className="col-12 col-md-6 col-lg-4">
+                        <div className="card">
+                            <div className="card-img-top">
+                                <img src={cover} alt="film" className='img-fluid' />
+                            </div>
+                            <div className="card-body">
+                                <h3 className='text-primary'>{title}</h3>
+                                <h5><em>{author}</em></h5>
+                                <p>{excerpt}</p>
+                                <Link className="btn btn-primary" to={`/films/${id}`}>Esplora</Link>
+                            </div>
                         </div>
                     </div>
-                </div>
+                })}
             </div>
         </>
     )
