@@ -1,13 +1,13 @@
 import { useState, useEffect, React } from "react"
 import { useParams } from "react-router-dom"
-import RevieCard from "../components/RevieCard";
+import ReviewCard from "../components/ReviewCard";
 import axios from "axios";
 
 const FilmPage = () => {
     // recupero l'id del film cercato
     const { id } = useParams();
 
-    const [film, setFilm] = useState({})
+    const [film, setFilm] = useState({ reviews: [] })
 
     // definizione funzione che recupera il film con id cercato dal db tramite chiamata ajax con axios
     const fetchFilm = () => {
@@ -36,8 +36,11 @@ const FilmPage = () => {
                     <h4><em>{film.director}</em></h4>
                     <p>{film.abstract}</p>
                 </div>
+                {film.reviews.map((review) =>
+                    <ReviewCard review={review} />
+                )}
             </div>
-            <RevieCard />
+
         </>
 
     )
