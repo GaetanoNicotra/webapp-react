@@ -18,8 +18,8 @@ const HomePage = () => {
 
     return (
         <>
-            <h1 className='text-secondary'>BOOLFILMS</h1>
-            <div className="row mt-4 mb-5 gy-4">
+            <h1 className='text-secondary'>FILMS</h1>
+            <div className="row mt-2 mb-5 gy-4">
                 {films.map((film) => {
                     // map
                     return <FilmCard film={film} key={film.id} />

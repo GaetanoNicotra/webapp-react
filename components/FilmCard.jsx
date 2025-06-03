@@ -4,8 +4,8 @@ const FilmCard = ({ film }) => {
     // destrutturazione 
     const { id, title, director, image } = film;
     return (
-        <div className="col-12 col-md-6 col-lg-4">
-            <div className="card">
+        <div className="col-12 col-md-6 col-lg-4 ">
+            <div className="card h-100">
                 <div className="card-img-top">
                     <img src={image} alt="film" className='img-fluid' />
                 </div>

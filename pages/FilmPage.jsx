@@ -35,7 +35,7 @@ const FilmPage = () => {
                     <p>{film.release_year}</p>
                     <h4><em>{film.director}</em></h4>
                     <p>{film.abstract}</p>
-                    <div> <StarRating vote={film.average_vote} /></div>
+                    <div><StarRating vote={film.average_vote} /></div>
                 </div>
                 <h3 className="mt-4 mb-3">Recensioni:</h3>
                 {film.reviews.map((review) =>
