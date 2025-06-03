@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FilmCard from "../components/FilmCard";
-
+import axios from "axios";
 const initialFilms = [
     {
         id: 1,
@@ -143,11 +143,16 @@ const initialFilms = [
 const HomePage = (film) => {
     // definisco la variabile di stato
     const [films, setFilms] = useState(initialFilms)
-
+    // definizione funzione che recupera i dati dal db tramite chiamata ajax con axios
+    useEffect(() => {
+        axios.get('http://127.0.0.1:3000/api/films/').then((resp) => {
+            console.log(resp.data)
+        }).catch((err) => { console.log(err) })
+    }, [])
     return (
         <>
             <h1 className='text-secondary'>BOOLFILMS</h1>
-            <div className="row mt-5 gy-4">
+            <div className="row mt-4 mb-5 gy-4">
                 {films.map((film) => {
                     // map
                     return <FilmCard film={film} key={film.id} />
