@@ -1,3 +1,4 @@
+import StarRating from "./StarRating";
 
 const ReviewCard = ({ review }) => {
     const { name, vote, text } = review;
@@ -8,10 +9,11 @@ const ReviewCard = ({ review }) => {
                 <h3>{name}</h3>
                 <h4>{vote}</h4>
                 <p>{text}</p>
+                <StarRating vote={vote} />
             </div>
             <hr />
         </>
     )
 }
 
-export default ReviewCard
+export default ReviewCard;
