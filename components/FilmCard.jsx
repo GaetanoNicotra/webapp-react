@@ -7,7 +7,7 @@ const FilmCard = ({ film }) => {
         <div className="col-12 col-md-6 col-lg-4 ">
             <div className="card h-100">
                 <div className="card-img-top">
-                    <img src={image} alt="film" className='img-fluid' />
+                    <img src={image} alt="film" className='img-fluid h-100' />
                 </div>
                 <div className="card-body">
                     <h3 className='text-primary'>{title}</h3>

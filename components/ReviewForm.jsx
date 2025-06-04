@@ -28,7 +28,7 @@ const ReviewForm = ({ movie_id, reloadReviews }) => {
     return (
         <>
             <div className='col-12 border'>
-                <h4 className='mt-4'>Inserisci una nuova recensione</h4>
+                <h4 className='mt-2 mb-4'>Inserisci una nuova recensione</h4>
                 <form onSubmit={handleSubmit}>
                     <div>Inserisci il nome</div>
                     <input className="form-control form-control mt-2 mb-2" type="text" aria-label=".form-control-lg example" required name="name" value={formData.name} onChange={setFieldValue} />
