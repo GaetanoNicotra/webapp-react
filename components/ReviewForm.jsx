@@ -27,15 +27,16 @@ const ReviewForm = ({ movie_id, reloadReviews }) => {
 
     return (
         <>
-            <div className='col-12'>
+            <div className='col-12 border'>
+                <h4 className='mt-4'>Inserisci una nuova recensione</h4>
                 <form onSubmit={handleSubmit}>
                     <div>Inserisci il nome</div>
-                    <input className="form-control form-control" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example" required name="name" value={formData.name} onChange={setFieldValue} />
+                    <input className="form-control form-control mt-2 mb-2" type="text" aria-label=".form-control-lg example" required name="name" value={formData.name} onChange={setFieldValue} />
                     <div>Inserisci la recensione</div>
-                    <input className="form-control-lg" type="text" placeholder="Default input" aria-label="default input example" required name="text" value={formData.text} onChange={setFieldValue} />
+                    <textarea className="form-control-lg mt-2 mb-2" type="text-area" aria-label="default input example" required name="text" value={formData.text} onChange={setFieldValue}></textarea>
                     <div>inserisci il voto</div>
-                    <input className="form-control form-control-sm" type="number" min="0" max="5" placeholder=".form-control-sm" aria-label=".form-control-sm example" name='vote' required value={formData.vote} onChange={setFieldValue} />
-                    <button className="btn" type='submit'>Invia</button>
+                    <input className="form-control form-control-sm mt-2 mb-2" type="number" min="0" max="5" aria-label=".form-control-sm example" name='vote' required value={formData.vote} onChange={setFieldValue} />
+                    <button className="btn btn-primary mt-2 mb-2" type='submit'>Invia</button>
                 </form>
             </div >
         </>
