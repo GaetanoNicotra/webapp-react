@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard";
 import axios from "axios";
 import StarRating from "../components/StarRating";
+import ReviewForm from "../components/ReviewForm";
+
+
 const FilmPage = () => {
     // recupero l'id del film cercato
     const { id } = useParams();
@@ -42,6 +45,7 @@ const FilmPage = () => {
                     <ReviewCard key={`review-${review.id}`} review={review} />
                 )}
             </div>
+            <ReviewForm movie_id={id} reloadReviews={fetchFilm} />
         </>
     )
 }
