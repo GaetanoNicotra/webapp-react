@@ -1,12 +1,13 @@
-import { useState, useEffect, React } from "react"
+import { useState, useEffect, React, useContext } from "react"
 import { useParams } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard";
 import axios from "axios";
 import StarRating from "../components/StarRating";
 import ReviewForm from "../components/ReviewForm";
-
+import globalContext from "../src/contexts/GlobalContext";
 
 const FilmPage = () => {
+    const { setIsLoading } = useContext(globalContext)
     // recupero l'id del film cercato
     const { id } = useParams();
 
@@ -14,8 +15,12 @@ const FilmPage = () => {
 
     // definizione funzione che recupera il film con id cercato dal db tramite chiamata ajax con axios
     const fetchFilm = () => {
+        setIsLoading(true)
         axios.get(`http://127.0.0.1:3000/api/films/${id}`).then((resp) => {
-            setFilm(resp.data);
+            setTimeout(() => {
+                setFilm(resp.data)
+                setIsLoading(false)
+            }, 1500)
         }).catch((err) => console.log(err))
     };
 
