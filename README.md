@@ -1,12 +1,37 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📘 Web app React Film 
 
-Currently, two official plugins are available:
+Questa applicazione è una web app sviluppata con **React** che permette di visualizzare un catalogo di film, consultarne i dettagli e leggere o aggiungere recensioni.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+## Caratteristiche principali
+
+- **Homepage**: mostra la lista di tutti i film disponibili.
+- **Pagina dettaglio film**: visualizza titolo, genere, anno di uscita, regista, descrizione e valutazione media.
+- **Recensioni utenti**: ogni film presenta una lista di commenti e un modulo per inserire nuove recensioni, con nome, testo e voto numerico.
+- **Aggiornamento in tempo reale**: le recensioni inviate vengono mostrate immediatamente senza ricaricare la pagina.
+- **Stato di caricamento globale**: gestito tramite **Context API**, indica chiaramente quando l’app comunica con il backend.
+- **Routing client-side**: implementato con **React Router**, garantisce navigazione fluida tra le pagine.
+
+## Tecnologie utilizzate 💫
+
+- **React** per il frontend.
+- **Context API** per la gestione dello stato globale (loading).
+- **Axios** per le chiamate HTTP al backend.
+- **React Router** per la navigazione tra le pagine.
+- **Componenti riutilizzabili**: FilmCard, ReviewCard, StarRating, ReviewForm.
+
+
+## Obiettivo del progetto
+
+- Creare un’interfaccia semplice, intuitiva e dinamica.
+- Gestire lo stato globale in modo efficiente.
+- Interagire con un backend per leggere e scrivere dati.
+- Sviluppare una SPA moderna con React, sfruttando routing, componenti e gestione dello stato.
+
+---
+
